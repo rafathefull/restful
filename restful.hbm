@@ -1,0 +1,14 @@
+hbhttpd.hbc
+hbssl.hbc
+
+-owsRestFul
+-w1
+-mt
+-inc
+-b
+
+wsRestful.prg
+basecontroller.prg
+baseservice.prg
+status_controller.prg
+status_service.prg
