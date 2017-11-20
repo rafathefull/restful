@@ -22,7 +22,7 @@ CLASS BaseController
    METHOD modify( hJSON )
    METHOD controller( cID )
    METHOD getJSON()
-   METHOD check_content_type() INLINE ( "application/json" $ server[ "CONTENT_TYPE" ] )
+   METHOD check_content_type() INLINE ( "application/json" $ ::CONTENT_TYPE )
 
 END CLASS
 
@@ -43,7 +43,7 @@ METHOD New( cID ) CLASS BaseController
 METHOD controller( cID ) CLASS BaseController
 
    ::REQUEST_METHOD  := server[ "REQUEST_METHOD" ]
-   ::CONTENT_TYPE    := server[ "CONTENT_TYPE" ]
+   ::CONTENT_TYPE    := hb_HGetDef( server, "CONTENT_TYPE", "" )  
 
    IF !::oService:getError()
       DO CASE
